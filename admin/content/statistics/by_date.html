@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>서초구 코로나 백신 접종 관리</title>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../../resources/plugins/fontawesome-free/css/all.min.css">
+    <!-- date-range-picker -->
+    <link rel="stylesheet" href="../../resources/plugins/daterangepicker/daterangepicker.css">
+    <!-- Template style -->
+    <link rel="stylesheet" href="../../resources/css/adminlte.css">
+    <!-- Common style -->
+    <link rel="stylesheet" href="../../resources/css/style.css">
+    <!-- Additional style -->
+    <link rel="stylesheet" href="../../resources/css/additional.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    Welcome <a href="#">홍길동</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="" class="brand-link">
+                <span class="brand-image"><img src="../../resources/images/logo.svg" alt="서초구 Logo" class="img-circle"></span>
+                <span class="brand-text font-weight-bold text-white">코로나 백신 접종 관리</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a href="../status/status.html" class="nav-link">
+                                <i class="nav-icon fas fa-notes-medical"></i>
+                                <p>
+                                    접종현황
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../advance/advance.html" class="nav-link">
+                                <i class="nav-icon fas fa-user-md"></i>
+                                <p>
+                                    예진관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../monitoring/monitoring.html" class="nav-link">
+                                <i class="nav-icon fas fa-procedures"></i>
+                                <p>
+                                    이상반응 모니터링
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../inoculator/inoculator.html" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>
+                                    접종자명단
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="../statistics/by_date.html" class="nav-link active">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    통계자료
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../statistics/by_date.html" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>일자별</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../statistics/by_symptom.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>이상증상별</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../statistics/by_stock.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>백신재고별(누적)</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../statistics/by_place.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>접종장소별(누적)</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../statistics/by_age.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>연령별(누적)</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-stethoscope"></i>
+                                <p>
+                                    백신관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    계정관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-building"></i>
+                                <p>
+                                    기관관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <h1 class="m-0 text-dark">일자별 - 통계자료</h1>
+                </div>
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <nav class="my-tab">
+                        <ul>
+                            <li><a href="by_date.html" class="nav-link active">일자별</a></li>
+                            <li><a href="by_symptom.html" class="nav-link">이상증상별</a></li>
+                            <li><a href="by_stock.html" class="nav-link">백신재고별(누적)</a></li>
+                            <li><a href="by_place.html" class="nav-link">접종장소별(누적)</a></li>
+                            <li><a href="by_age.html" class="nav-link">연령별(누적)</a></li>
+                        </ul>
+                    </nav>
+                    <div class="card no-print">
+                        <div class="card-body">
+                            <div class="row">
+                                <label for="" class="col-auto col-form-label">지역</label>
+                                <div class="col-auto">
+                                    <select name="" id="" class="custom-select">
+                                        <option value="">서초구</option>
+                                    </select>
+                                </div>
+                                <label for="" class="col-auto col-form-label">접종일자</label>
+                                <div class="col-auto">
+                                    <div class="input-group" style="width:300px">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control float-right" data-event="rangeDatepicker" id="date-range">
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark min-width">조회</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row row-point5rem justify-content-end mb-3">
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary">엑셀저장</button>
+                                </div>
+                            </div>
+                            <div id="tableBox">
+                                <div data-reactroot="">
+                                    <div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <div class="total_num">
+                                                <!-- react-text: 5 -->총
+                                                <!-- /react-text --><span>3</span><!-- react-text: 7 -->건
+                                                <!-- /react-text -->
+                                            </div>
+                                            <div class="listing_select">
+                                                <span>목록개수</span>
+                                                <span class="select">
+                                                    <select class="custom-select custom-select-sm d-inline-block w-auto">
+                                                        <option>10</option>
+                                                        <option>25</option>
+                                                        <option>50</option>
+                                                        <option>100</option>
+                                                    </select>
+                                                </span>
+                                                <span>개</span>
+                                            </div>
+                                        </div>
+                                        <div class="main_search_result_list">
+                                            <table class="table table-bordered" id="datatable">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center" rowspan="2">날짜</th>
+                                                        <th class="text-center" rowspan="2">접종자수</th>
+                                                        <th class="text-center" colspan="2">지역별</th>
+                                                        <th class="text-center" colspan="2">차수별</th>
+                                                        <th class="text-center" colspan="2">성별</th>
+                                                        <th class="text-center" colspan="5">백신종류</th>
+                                                        <th class="text-center" rowspan="2">비접종</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center">서초구</th>
+                                                        <th class="text-center">타지역</th>
+                                                        <th class="text-center">1차</th>
+                                                        <th class="text-center">2차</th>
+                                                        <th class="text-center">남</th>
+                                                        <th class="text-center">여</th>
+                                                        <th class="text-center">화이자</th>
+                                                        <th class="text-center">모더나</th>
+                                                        <th class="text-center">아스트라제네카</th>
+                                                        <th class="text-center">얀센</th>
+                                                        <th class="text-center">기타</th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr class="bg-highlight">
+                                                        <td class="text-center"><strong>합계</strong></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="pagination_box clearfix">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item disabled"><a class="page-link" href="javascript:;">&lt;&lt;</a></li>
+                                                <li class="page-item disabled"><a class="page-link" href="javascript:;">&lt;</a></li>
+                                                <li class=" page-item active"><a class="page-link" href="javascript:;">1</a></li>
+                                                <li class="page-item disabled"><a class="page-link" href="javascript:;">&gt;</a></li>
+                                                <li class="page-item disabled"><a class="page-link" href="javascript:;">&gt;&gt;</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- modal : 모니터링 -->
+    <div class="modal" tabindex="-1" id="modal-monitoring">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">모니터링</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <strong class="d-block mb-2">증상</strong>
+                    <div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk1"><label for="chk1"
+                                class="custom-control-label">접종부위 통증</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk2"><label for="chk2"
+                                class="custom-control-label">접종부위 압통</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk3"><label for="chk3"
+                                class="custom-control-label">접종부위 부기</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk4"><label for="chk4"
+                                class="custom-control-label">접종부위 부종</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk5"><label for="chk5"
+                                class="custom-control-label">접종부위 발적</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk6"><label for="chk6"
+                                class="custom-control-label">접종부위 홍반</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk7"><label for="chk7"
+                                class="custom-control-label">겨드랑이 부기</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk8"><label for="chk8"
+                                class="custom-control-label">겨드랑이 압통</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk9"><label for="chk9"
+                                class="custom-control-label">발열</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk10"><label for="chk10"
+                                class="custom-control-label">두통</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk11"><label for="chk11"
+                                class="custom-control-label">근육통</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk12"><label for="chk12"
+                                class="custom-control-label">오한</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk13"><label for="chk13"
+                                class="custom-control-label">구토</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk14"><label for="chk14"
+                                class="custom-control-label">오심(메스꺼움)</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk15"><label for="chk15"
+                                class="custom-control-label">피로감</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk16"><label for="chk16"
+                                class="custom-control-label">권태감</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk17"><label for="chk17"
+                                class="custom-control-label">귀밑통증</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk18"><label for="chk18"
+                                class="custom-control-label">입술·입안·혀 부종(부음)</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk19"><label for="chk19"
+                                class="custom-control-label">두드러기</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk20"><label for="chk20"
+                                class="custom-control-label">호흡곤란</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk21"><label for="chk21"
+                                class="custom-control-label">창백함</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk22" checked><label for="chk22"
+                                class="custom-control-label">심박동 증가</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk23"><label for="chk23"
+                                class="custom-control-label">어지러움</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk24"><label for="chk24"
+                                class="custom-control-label">발한(땀)</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk25"><label for="chk25"
+                                class="custom-control-label">안면마비</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk26"><label for="chk26"
+                                class="custom-control-label">경련</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk27"><label for="chk27"
+                                class="custom-control-label">졸도(기절)</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk28"><label for="chk28"
+                                class="custom-control-label">임파선염</label></div>
+                        <div class="custom-control custom-checkbox custom-control-inline"><input class="custom-control-input" type="checkbox" id="chk29"><label for="chk29"
+                                class="custom-control-label">기타</label></div>
+                    </div>
+                    <strong class="d-block mt-3 mb-2">세부증상 입력</strong>
+                    <textarea name="" id="" cols="" rows="3" class="form-control" placeholder="세부증상 입력"></textarea>
+                    <strong class="d-block mt-3 mb-2">상담 및 조치내용</strong>
+                    <textarea name="" id="" cols="" rows="3" class="form-control" placeholder="전화상담 및 이송 등 조치결과 입력"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">처리중 저장</button>
+                    <button type="button" class="btn btn-primary">처리완료 저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal : 접종이력 상세 -->
+    <div class="modal" tabindex="-1" id="modal-history">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">접종이력 상세</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><b>접종일</b> : 2021-03-30</li>
+                        <li class="list-group-item"><b>접종백신</b> : 모더나</li>
+                        <li class="list-group-item"><b>접종장소</b> : 보건소</li>
+                        <li class="list-group-item"><b>예진 특이사항</b> : 당뇨환자</li>
+                        <li class="list-group-item"><b>이상증상</b> : 오한</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal : 예진내용 상세/입력 -->
+    <div class="modal" tabindex="-1" id="modal-advance">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">예진내용 상세</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>(질환, 복용약,예진자 의견 등)</p>
+                    <textarea name="" id="" cols="" rows="6" class="form-control">당뇨환자이며 xx약을 복용중</textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- moment -->
+    <script src="../../resources/plugins/moment/moment.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="../../resources/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../resources/js/adminlte.min.js"></script>
+    <!-- ui -->
+    <script src="../../resources/js/ui.js"></script>
+
+    <script>
+        $(document).ready(function(){
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>서초구 코로나 백신 접종 관리</title>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../../resources/plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../resources/plugins/datatables/css/dataTables.bootstrap4.min.css">
+    <!-- date-range-picker -->
+    <link rel="stylesheet" href="../../resources/plugins/daterangepicker/daterangepicker.css">
+    <!-- Template style -->
+    <link rel="stylesheet" href="../../resources/css/adminlte.css">
+    <!-- Common style -->
+    <link rel="stylesheet" href="../../resources/css/style.css">
+    <!-- Additional style -->
+    <link rel="stylesheet" href="../../resources/css/additional.css">
+</head>
+
+<body>
+    로딩 spinner <br>
+    - show : $('html').addClass('is-loading'); <br>
+    - hide : $('html').removeClass('is-loading'); <br>
+    <button class="btn btn-primary" type="button" id="btnLoading">클릭!</button>
+
+    <br><br>
+
+    <div>버튼에 넣은 경우</div>
+    <button class="btn btn-primary" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Loading...
+    </button>
+
+    <!-- loading (가장 하단에 위치 필수) -->
+    <div id="loading">
+        <div class="dim"></div>
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="spinner-border text-light" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <script src="../../resources/plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../../resources/plugins/datatables/js/dataTables.bootstrap4.js"></script>
+    <!-- moment -->
+    <script src="../../../resources/plugins/moment/moment.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="../../../resources/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../resources/js/adminlte.min.js"></script>
+    <!-- ui -->
+    <script src="../../resources/js/ui.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#btnLoading').on('click',function(){
+                $('html').addClass('is-loading');
+            });
+        });
+    </script>
+</body>
+
+</html>

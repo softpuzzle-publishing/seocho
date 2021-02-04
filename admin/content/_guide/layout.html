@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>서초구 코로나 백신 접종 관리</title>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../../resources/plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../resources/plugins/datatables/css/dataTables.bootstrap4.min.css">
+    <!-- date-range-picker -->
+    <link rel="stylesheet" href="../../resources/plugins/daterangepicker/daterangepicker.css">
+    <!-- Template style -->
+    <link rel="stylesheet" href="../../resources/css/adminlte.css">
+    <!-- Common style -->
+    <link rel="stylesheet" href="../../resources/css/style.css">
+    <!-- Additional style -->
+    <link rel="stylesheet" href="../../resources/css/additional.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    Welcome <a href="#">홍길동</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="" class="brand-link">
+                <span class="brand-image"><img src="../../resources/images/logo.svg" alt="서초구 Logo" class="img-circle"></span>
+                <span class="brand-text font-weight-bold text-white">코로나 백신 접종 관리</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-notes-medical"></i>
+                                <p>
+                                    접종현황
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user-md"></i>
+                                <p>
+                                    예진관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../monitoring/monitoring.html" class="nav-link">
+                                <i class="nav-icon fas fa-procedures"></i>
+                                <p>
+                                    이상반응 모니터링
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../inoculator/inoculator.html" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>
+                                    접종자명단
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../statistics/by_date.html" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    통계자료
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-stethoscope"></i>
+                                <p>
+                                    백신관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    계정관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-building"></i>
+                                <p>
+                                    기관관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <h1 class="m-0 text-dark">접종현황</h1>
+                </div>
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card no-print">
+                        <div class="card-body">
+                            <div class="row">
+                                <label for="" class="col-auto col-form-label">접종일자</label>
+                                <div class="col-3">
+                                    <input type="text" class="form-control" id="">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary" style="width:100px">조회</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="report">
+                        <div class="report-daily">
+                            <div class="text-right no-print mb-3">
+                                <button type="button" class="btn btn-dark" onclick="window.print()" style="width:100px">인쇄하기</button>
+                            </div>
+                            <h1>서초구 코로나19 백신 접종 일일보고</h1>
+                            <h2>접종 현황</h2>
+                            <table class="table table-bordered text-center">
+                                <colgroup>
+                                    <col style="width: 14%;">
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>금일(2.20)</th>
+                                        <th>누적</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-highlight">
+                                        <td>접종자수</td>
+                                        <td><strong class="text-danger">4,300명</strong></td>
+                                        <td><strong>4,300명</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>차수별</td>
+                                        <td><b>1차 4,200명, 2차 100명</b></td>
+                                        <td><b>1차 4,200명, 2차 100명</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>지역별</td>
+                                        <td>1차 4,200명, 2차 100명</td>
+                                        <td>1차 4,200명, 2차 100명</td>
+                                    </tr>
+                                    <tr>
+                                        <td>백신별</td>
+                                        <td>화이자 1,000명, 모더나 1,000명, 아스트라제네카 1,000명, 얀센 200명, 기타 100명</td>
+                                        <td>화이자 1,000명, 모더나 1,000명, 아스트라제네카 1,000명, 얀센 200명, 기타 100명</td>
+                                    </tr>
+                                    <tr>
+                                        <td>접종센터별</td>
+                                        <td>서초접종센터 3,000명, 위탁의료기관 1,000명, 방문접종 200명, 의료기관자체접종 100명</td>
+                                        <td>서초접종센터 30,000명, 위탁의료기관 10,000명, 방문접종 3,000명, 의료기관자체접종 1000명</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h2>백신 재고 : 50,000회분</h2>
+                            <table class="table table-bordered text-center">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>합계</th>
+                                        <th>화이자</th>
+                                        <th>모더나</th>
+                                        <th>아스트라제네카</th>
+                                        <th>얀센</th>
+                                        <th>기타</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>재고량</td>
+                                        <td>5,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                    </tr>
+                                    <tr>
+                                        <td>서초접종센터 <br>(보건소 포함)</td>
+                                        <td>5,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                    </tr>
+                                    <tr>
+                                        <td>의료기관 <br>(위탁, 자체)</td>
+                                        <td>5,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                        <td>1,000회분</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h2>이상증상자 : 금일 40명(누계 4,000명)</h2>
+                            <table class="table table-bordered text-center">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" colspan="2"></th>
+                                        <th rowspan="2">합계</th>
+                                        <th colspan="5">백신별</th>
+                                    </tr>
+                                    <tr>
+                                        <th>화이자</th>
+                                        <th>모더나</th>
+                                        <th>아스트라제네카</th>
+                                        <th>얀센</th>
+                                        <th>기타</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">실인원</td>
+                                        <td>40명</td>
+                                        <td>10명</td>
+                                        <td>10명</td>
+                                        <td>10명</td>
+                                        <td>5명</td>
+                                        <td>5명</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">증상 건수</td>
+                                        <td>300건</td>
+                                        <td>100건</td>
+                                        <td>10건</td>
+                                        <td>10건</td>
+                                        <td>10건</td>
+                                        <td>5건</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="32">증상별</td>
+                                        <td>서초구 통화</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>질병관리청 통화</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>119 통화</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>접종부위 통증</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>접종부위 압통</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>접종부위 부기</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>접종부위 부종</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>접종부위 발적</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>접종부위 홍반</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>겨드랑이 부기</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>겨드랑이 압통</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>발열</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>두통</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>근육통</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>오한</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>구토</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>오심(메스꺼움)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>피로감</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>권태감</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>귀밑통증</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>입술,입안,혀 부종(부음)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>두드러기</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>호흡곤란</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>창백함</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>심박동 증가</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>어지러움</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>발한(땀)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>안면마비</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>경련</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>졸도(기절)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>임파선염</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>기타</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <script src="../../resources/plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../../resources/plugins/datatables/js/dataTables.bootstrap4.js"></script>
+    <!-- moment -->
+    <script src="../../resources/plugins/moment/moment.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="../../resources/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../resources/js/adminlte.min.js"></script>
+    <!-- ui -->
+    <script src="../../resources/js/ui.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>서초구 코로나 백신 접종 관리</title>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../../resources/plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../resources/plugins/datatables/css/dataTables.bootstrap4.min.css">
+    <!-- date-range-picker -->
+    <link rel="stylesheet" href="../../resources/plugins/daterangepicker/daterangepicker.css">
+    <!-- Template style -->
+    <link rel="stylesheet" href="../../resources/css/adminlte.css">
+    <!-- Common style -->
+    <link rel="stylesheet" href="../../resources/css/style.css">
+    <!-- Additional style -->
+    <link rel="stylesheet" href="../../resources/css/additional.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    Welcome <a href="#">홍길동</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="" class="brand-link">
+                <span class="brand-image"><img src="../../resources/images/logo.svg" alt="서초구 Logo" class="img-circle"></span>
+                <span class="brand-text font-weight-bold text-white">코로나 백신 접종 관리</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a href="../status/status.html" class="nav-link">
+                                <i class="nav-icon fas fa-notes-medical"></i>
+                                <p>
+                                    접종현황
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../advance/advance.html" class="nav-link active">
+                                <i class="nav-icon fas fa-user-md"></i>
+                                <p>
+                                    예진관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../monitoring/monitoring.html" class="nav-link">
+                                <i class="nav-icon fas fa-procedures"></i>
+                                <p>
+                                    이상반응 모니터링
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../inoculator/inoculator.html" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>
+                                    접종자명단
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    통계자료
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../statistics/by_date.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>일자별</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>이상증상별</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>백신재고별(누적)</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>접종장소별(누적)</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>연령별(누적)</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-stethoscope"></i>
+                                <p>
+                                    백신관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    계정관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-building"></i>
+                                <p>
+                                    기관관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <h1 class="m-0 text-dark">예진관리</h1>
+                </div>
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card no-print">
+                        <div class="card-body">
+                            <div class="row">
+                                <label for="" class="col-auto col-form-label">성명</label>
+                                <div class="col-auto">
+                                    <input type="text" class="form-control" id="">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark min-width">조회</button>
+                                </div>
+                                <label for="" class="col-auto col-form-label ml-4"">접종일자</label>
+                                <div class="col-auto">
+                                    <div class="input-group" style="width:300px">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control float-right" data-event="rangeDatepicker" id="date-range">
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-dark min-width">조회</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row row-point5rem justify-content-end mb-3">
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary">추가</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary">삭제</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary">엑셀저장</button>
+                                </div>
+                            </div>
+                            <table class="table table-bordered" id="datatable">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">
+                                            <div class="form-check">
+                                                <input class="form-check-input position-static" type="checkbox" id="">
+                                            </div>
+                                        </th>
+                                        <th class="text-center">순번</th>
+                                        <th class="text-center">접종일자</th>
+                                        <th class="text-center">접종시간</th>
+                                        <th class="text-center">성명</th>
+                                        <th class="text-center">생년월일</th>
+                                        <th class="text-center">성별</th>
+                                        <th class="text-center">전화번호</th>
+                                        <th class="text-center">주소</th>
+                                        <th class="text-center">백신명</th>
+                                        <th class="text-center">접종차수</th>
+                                        <th class="text-center">접종이력</th>
+                                        <th class="text-center" colspan="2">예진내용</th>
+                                        <th class="text-center">접종여부</th>
+                                        <th class="text-center">저장</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">
+                                            <div class="form-check">
+                                                <input class="form-check-input position-static" type="checkbox" id="">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">2021-03-30</td>
+                                        <td class="text-center">21:00</td>
+                                        <td class="text-center">김영희</td>
+                                        <td class="text-center">990101</td>
+                                        <td class="text-center">여</td>
+                                        <td class="text-center">010-0000-0000</td>
+                                        <td class="text-center">서울시 서초구 서초대로</td>
+                                        <td class="text-center">
+                                            <select name="" id="" class="custom-select custom-select-sm">
+                                                <option value="" selected>화이자</option>
+                                                <option value="">모더나</option>
+                                                <option value="">아스트라제네카</option>
+                                                <option value="">얀센</option>
+                                                <option value="">기타</option>
+                                            </select>
+                                        </td>
+                                        <td class="text-center">1차</td>
+                                        <td class="text-center"><a href="#modal-history" class="text-underline" data-toggle="modal">2021-03-30 모더나 보건소</a></td>
+                                        <td class="text-center"><a href="#modal-advance" class="text-underline text-truncate d-inline-block align-middle" data-toggle="modal" style="max-width:90px">당뇨환자이며 xx약을 복용중</a></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal-advance">입력</button>
+                                        </td>
+                                        <td class="text-center">
+                                            <select name="" id="" class="custom-select custom-select-sm">
+                                                <option value="" selected>미접종</option>
+                                                <option value="">접종</option>
+                                            </select>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-success">수정</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- modal : 접종이력 상세 -->
+    <div class="modal" tabindex="-1" id="modal-history">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">접종이력 상세</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><b>접종일</b> : 2021-03-30</li>
+                        <li class="list-group-item"><b>접종백신</b> : 모더나</li>
+                        <li class="list-group-item"><b>접종장소</b> : 보건소</li>
+                        <li class="list-group-item"><b>예진 특이사항</b> : 당뇨환자</li>
+                        <li class="list-group-item"><b>이상증상</b> : 오한</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal : 예진내용 상세/입력 -->
+    <div class="modal" tabindex="-1" id="modal-advance">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">예진내용</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>(질환, 복용약,예진자 의견 등)</p>
+                    <textarea name="" id="" cols="" rows="6" class="form-control">당뇨환자이며 xx약을 복용중</textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="../../resources/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <script src="../../resources/plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../../resources/plugins/datatables/js/dataTables.bootstrap4.js"></script>
+    <!-- moment -->
+    <script src="../../resources/plugins/moment/moment.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="../../resources/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../resources/js/adminlte.min.js"></script>
+    <!-- ui -->
+    <script src="../../resources/js/ui.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#datatable').DataTable({
+                "searching": false,
+            });
+        });
+    </script>
+</body>
+
+</html>
