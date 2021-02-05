@@ -24,7 +24,7 @@
 <body>
 
     <style>
-        body{background: #f6f6f2;margin: 20px;}
+        body{background: #f4f6f9;margin: 20px;}
         h1{text-align: center;margin-bottom: 10px;}
         #guide{overflow: hidden;}
         section{float: left;padding: 15px 20px;width: 50%;}
@@ -37,36 +37,6 @@
     </style>
     <div id="guide">
         <h1>서초구 코로나 백신 접종 관리 가이드</h1>
-        <section>
-            <h2>Icon</h2>
-            <div style="background: rgba(0,0,0,0.25);padding: 10px;">
-                <i class="icon-logo-sm"></i>
-                <i class="icon-logo"></i>
-                <i class="icon-menu"></i>
-                <i class="icon-logout"></i>
-                <i class="icon-global"></i>
-                <i class="icon-regional"></i>
-                <i class="icon-country"></i>
-                <i class="icon-statistic"></i>
-                <i class="icon-admin"></i>
-                <i class="fas fa-angle-right"></i>
-                <i class="icon-minus"></i>
-                <i class="icon-s-arr-down"></i>
-                <i class="icon-home"></i>
-                <i class="icon-trophy"></i>
-                <i class="icon-clock"></i>
-                <i class="icon-search"></i>
-                <i class="icon-prev"></i>
-                <i class="icon-next"></i>
-                <i class="icon-import"></i>
-                <i class="icon-s-add"></i>
-                <i class="icon-s-minus"></i>
-                <i class="icon-refresh"></i>
-                <i class="icon-photo"></i>
-                <i class="icon-close"></i>
-                <i class="icon-top"></i>
-            </div>
-        </section>
         <section>
             <h2>버튼</h2>
             <div>
@@ -146,19 +116,6 @@
                             <input type="text" id="form1" class="form-control">
                         </div>
                     </div>
-                    <div class="col-12 col-md">
-                        <div class="form-group">
-                            <label for="form2">상태</label>
-                            <div>
-                                <label class="custom-control custom-control-radio">
-                                    <input type="radio" id="s1" name="status" checked><span>활성화</span><i></i>
-                                </label>
-                                <label class="custom-control custom-control-radio">
-                                    <input type="radio" id="s2" name="status"><span>비활성화</span><i></i>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="form-group">
                     <label for="form1">제목</label>
@@ -186,50 +143,28 @@
         <section>
             <h2>Form 요소</h2>
             <div>
-                <input type="text" class="form-control">
-                <select name="" id="" class="form-control">
+                <input type="text" class="form-control" value="input medium">
+                <input type="text" class="form-control form-control-sm" value="input small">
+                <select name="" id="" class="custom-select">
                     <option value="">select medium</option>
                     <option value="">20</option>
                 </select>
-                <select name="" id="" class="form-control form-control-sm">
+                <select name="" id="" class="custom-select custom-select-sm">
                     <option value="">select small</option>
                     <option value="">20</option>
                 </select>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-append">
-                        <button class="btn btn-primary"><i class="icon-search"><span class="sr-only">SEARCH</span></i></button>
-                    </span>
-                </div>
             </div>
             <div>
-                <label class="custom-control custom-control-radio">
-                    <input type="radio" id="s1" name="status"><span>활성화</span><i></i>
-                </label>
-                <label class="custom-control custom-control-radio">
-                    <input type="radio" id="s2" name="status"><span>비활성화</span><i></i>
-                </label>
-
-                <label class="custom-control custom-control-checkbox-square">
-                    <input type="checkbox" id="" name=""><span>자동 로그인</span><i></i>
-                </label>
-
-                <label class="custom-control custom-control-checkbox-primary">
-                    <input type="checkbox" id="" name=""><span>North America</span><i></i>
-                </label>
-
-                <label class="custom-control custom-control-checkbox-primary m-0">
-                    <input type="checkbox" id="" name=""><i></i>
-                </label>
-
-            </div>
-        </section>
-        <section>
-            <h2>서브 타이틀</h2>
-            <div>
-                <div class="sub-title-area">
-                    <div class="sub-title">약관 등록</div>
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" type="radio" id="rdo1">
+                    <label for="rdo1" class="custom-control-label">접종부위 통증</label>
                 </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="chk1">
+                    <label for="chk1" class="custom-control-label">접종부위 통증</label>
+                </div>
+
             </div>
         </section>
         <section>
@@ -254,7 +189,7 @@
         <section>
             <h2>Tab</h2>
             <div>
-                <nav class="main-tab">
+                <nav class="my-tab">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="pill" href="#t1" role="tab">Sales</a>
@@ -301,80 +236,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-        </section>
-        <section>
-            <h2>엑셀 업로드 리스트</h2>
-            <div>
-                <div class="excel-list">
-                    <div class="list">
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden99</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1000</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden5000</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden1</span></div>
-                        <div class="item"><span>hidden10000</span></div>
-                    </div>
-                </div>
             </div>
         </section>
     </div>

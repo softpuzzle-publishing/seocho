@@ -18,8 +18,17 @@ input[type=password]{font-family: 'NanumGothic';}
 
 .table{
     .bg-highlight{background-color: $light;}
+    > thead th{white-space: nowrap;}
+    .btn{white-space: nowrap;}
 }
+.table-fixed{table-layout: fixed;}
 
+.main-header .navbar-nav .nav-item > a{color: #333;}
+
+
+.brand-link{padding-top: 42px;padding-bottom: 42px;font-size: 18px;}
+
+.nav-sidebar  > .nav-item > .nav-link{padding-top: .75rem;padding-bottom: .75rem;}
 .nav-treeview > .nav-item > .nav-link{padding-left: 1.75rem;}
 
 .report{border: 1px solid $border-color;background: #fff;padding: 2rem 0;border-radius: $border-radius;}
@@ -47,7 +56,6 @@ input[type=password]{font-family: 'NanumGothic';}
 }
 
 .my-tab{
-
     ul{
         display: flex;flex-wrap: wrap;margin: 0 0 1.5rem 0;padding: 0;position: relative;
         &::before{content: '';width: 100%;height: 2px;background-color: $secondary;position: absolute;left: 0;bottom: 0;z-index: 1;}

@@ -146,6 +146,18 @@ input[type=password] { font-family: 'NanumGothic'; }
 
 .table .bg-highlight { background-color: #edeff8; }
 
+.table > thead th { white-space: nowrap; }
+
+.table .btn { white-space: nowrap; }
+
+.table-fixed { table-layout: fixed; }
+
+.main-header .navbar-nav .nav-item > a { color: #333; }
+
+.brand-link { padding-top: 42px; padding-bottom: 42px; font-size: 18px; }
+
+.nav-sidebar > .nav-item > .nav-link { padding-top: .75rem; padding-bottom: .75rem; }
+
 .nav-treeview > .nav-item > .nav-link { padding-left: 1.75rem; }
 
 .report { border: 1px solid #dee2e6; background: #fff; padding: 2rem 0; border-radius: 0.25rem; }

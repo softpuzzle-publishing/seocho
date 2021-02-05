@@ -641,7 +641,7 @@ mark, .mark { padding: 0.2em; background-color: #fcf8e3; }
 
 .form-control::placeholder { color: #6c757d; opacity: 1; }
 
-.form-control:disabled, .form-control[readonly] { background-color: #e9ecef; opacity: 1; }
+.form-control:disabled { background-color: #e9ecef; opacity: 1; }
 
 select.form-control:focus::-ms-value { color: #495057; background-color: #fff; }
 

@@ -8,8 +8,6 @@
 
     <!-- fontawesome -->
     <link rel="stylesheet" href="../../resources/plugins/fontawesome-free/css/all.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="../../resources/plugins/datatables/css/dataTables.bootstrap4.min.css">
     <!-- date-range-picker -->
     <link rel="stylesheet" href="../../resources/plugins/daterangepicker/daterangepicker.css">
     <!-- Template style -->
@@ -62,7 +60,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../advance/advance.html" class="nav-link active">
+                            <a href="../advance/advance.html" class="nav-link">
                                 <i class="nav-icon fas fa-user-md"></i>
                                 <p>
                                     예진관리
@@ -130,7 +128,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="../stock/stock.html" class="nav-link">
+                            <a href="../stock/stock.html" class="nav-link active">
                                 <i class="nav-icon fas fa-syringe"></i>
                                 <p>
                                     백신관리
@@ -167,7 +165,7 @@
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
-                    <h1 class="m-0 text-dark">예진관리</h1>
+                    <h1 class="m-0 text-dark">백신관리</h1>
                 </div>
             </div>
             <!-- /.content-header -->
@@ -177,27 +175,79 @@
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row">
-                                <label for="" class="col-auto col-form-label">성명</label>
-                                <div class="col-auto">
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-dark min-width">조회</button>
-                                </div>
-                                <label for="" class="col-auto col-form-label ml-4"">접종일자</label>
-                                <div class="col-auto">
-                                    <div class="input-group" style="width:300px">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control float-right" data-event="rangeDatepicker" id="date-range">
-                                    </div>
-                                </div>
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-dark min-width">조회</button>
-                                </div>
+                            <div class="mb-2">
+                                <strong>기준날짜 2020.02.22, 00:00</strong>
                             </div>
+                            <table class="table table-bordered table-fixed" id="datatable">
+                                <colgroup>
+                                    <col style="width:5%">
+                                    <col>
+                                    <col>
+                                    <col style="width:8%">
+                                    <col style="width:8%">
+                                    <col style="width:8%">
+                                    <col style="width:8%">
+                                    <col style="width:8%">
+                                    <col style="width:8%">
+                                    <col style="width:12%">
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" rowspan="2">
+                                            <input type="checkbox" class="align-middle">
+                                        </th>
+                                        <th class="text-center" rowspan="2">재고일자</th>
+                                        <th class="text-center" rowspan="2">등록자</th>
+                                        <th class="text-center" colspan="6">재고수량</th>
+                                        <th class="text-center" colspan="2" rowspan="2">특이사항</th>
+                                        <th class="text-center" rowspan="2">저장</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">합계</th>
+                                        <th class="text-center">화이자</th>
+                                        <th class="text-center">모더나</th>
+                                        <th class="text-center">아스트라제네카</th>
+                                        <th class="text-center">얀센</th>
+                                        <th class="text-center">기타</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="align-middle">
+                                        </td>
+                                        <td class="text-center">2021-01-01</td>
+                                        <td class="text-center">성모병원</td>
+                                        <td class="text-center">
+                                            <input type="text" class="form-control form-control-sm">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="text" class="form-control form-control-sm">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="text" class="form-control form-control-sm">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="text" class="form-control form-control-sm">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="text" class="form-control form-control-sm">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="text" class="form-control form-control-sm">
+                                        </td>
+                                        <td class="text-center"><a href="#modal-unusual" class="text-underline text-truncate d-inline-block align-middle"  data-toggle="modal" style="max-width:100%">망실 3개</a></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal-unusual">입력</button>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-primary">저장</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="card">
@@ -210,68 +260,57 @@
                                     <button type="button" class="btn btn-secondary">삭제</button>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" class="btn btn-secondary">엑셀저장</button>
+                                    <button type="button" class="btn btn-secondary">수정</button>
                                 </div>
                             </div>
-                            <table class="table table-bordered" id="datatable">
+                            <table class="table table-bordered">
+                                <colgroup>
+                                    <col style="width: 30%">
+                                    <col style="width: 10%">
+                                    <col style="width: 10%">
+                                    <col style="width: 10%">
+                                    <col style="width: 10%">
+                                    <col style="width: 10%">
+                                    <col style="width: 10%">
+                                </colgroup>
                                 <thead>
                                     <tr>
-                                        <th class="text-center">
-                                            <input type="checkbox" class="align-middle">
-                                        </th>
-                                        <th class="text-center">순번</th>
-                                        <th class="text-center">접종일자</th>
-                                        <th class="text-center">접종시간</th>
-                                        <th class="text-center">성명</th>
-                                        <th class="text-center">생년월일</th>
-                                        <th class="text-center">성별</th>
-                                        <th class="text-center">전화번호</th>
-                                        <th class="text-center">주소</th>
-                                        <th class="text-center">백신명</th>
-                                        <th class="text-center">접종차수</th>
-                                        <th class="text-center">접종이력</th>
-                                        <th class="text-center" colspan="2">예진내용</th>
-                                        <th class="text-center">접종여부</th>
-                                        <th class="text-center">저장</th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">합계</th>
+                                        <th class="text-center">화이자</th>
+                                        <th class="text-center">모더나</th>
+                                        <th class="text-center">아스트라제네카</th>
+                                        <th class="text-center">얀센</th>
+                                        <th class="text-center">기타</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="text-center">
-                                            <input type="checkbox" class="align-middle">
-                                        </td>
-                                        <td class="text-center">1</td>
-                                        <td class="text-center">2021-03-30</td>
-                                        <td class="text-center">21:00</td>
-                                        <td class="text-center">김영희</td>
-                                        <td class="text-center">990101</td>
-                                        <td class="text-center">여</td>
-                                        <td class="text-center">010-0000-0000</td>
-                                        <td class="text-center">서울시 서초구 서초대로</td>
-                                        <td class="text-center">
-                                            <select name="" id="" class="custom-select custom-select-sm">
-                                                <option value="" selected>화이자</option>
-                                                <option value="">모더나</option>
-                                                <option value="">아스트라제네카</option>
-                                                <option value="">얀센</option>
-                                                <option value="">기타</option>
-                                            </select>
-                                        </td>
-                                        <td class="text-center">1차</td>
-                                        <td class="text-center"><a href="#modal-history" class="text-underline" data-toggle="modal">2021-03-30 모더나 보건소</a></td>
-                                        <td class="text-center"><a href="#modal-advance" class="text-underline text-truncate d-inline-block align-middle" data-toggle="modal" style="max-width:90px">당뇨환자이며 xx약을 복용중</a></td>
-                                        <td class="text-center">
-                                            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal-advance">입력</button>
-                                        </td>
-                                        <td class="text-center">
-                                            <select name="" id="" class="custom-select custom-select-sm">
-                                                <option value="" selected>미접종</option>
-                                                <option value="">접종</option>
-                                            </select>
-                                        </td>
-                                        <td class="text-center">
-                                            <button type="button" class="btn btn-sm btn-success">수정</button>
-                                        </td>
+                                        <td class="text-center">재고량</td>
+                                        <td class="text-center">5,000회분</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">서초접종센터(보건소 포함)</td>
+                                        <td class="text-center">5,000회</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">의료기관(위탁, 자체)</td>
+                                        <td class="text-center">5,000회</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -286,41 +325,18 @@
     </div>
     <!-- ./wrapper -->
 
-    <!-- modal : 접종이력 상세 -->
-    <div class="modal" tabindex="-1" id="modal-history">
+    <!-- modal : 특이사항 -->
+    <div class="modal" tabindex="-1" id="modal-unusual">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">접종이력 상세</h5>
+                    <h5 class="modal-title">특이사항</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><b>접종일</b> : 2021-03-30</li>
-                        <li class="list-group-item"><b>접종백신</b> : 모더나</li>
-                        <li class="list-group-item"><b>접종장소</b> : 보건소</li>
-                        <li class="list-group-item"><b>예진 특이사항</b> : 당뇨환자</li>
-                        <li class="list-group-item"><b>이상증상</b> : 오한</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- modal : 예진내용 상세/입력 -->
-    <div class="modal" tabindex="-1" id="modal-advance">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">예진내용</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>(질환, 복용약,예진자 의견 등)</p>
-                    <textarea name="" id="" cols="" rows="6" class="form-control">당뇨환자이며 xx약을 복용중</textarea>
+                    <textarea name="" id="" cols="" rows="5" class="form-control">망실 3개</textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">저장</button>
@@ -329,16 +345,12 @@
         </div>
     </div>
 
-
     <!-- REQUIRED SCRIPTS -->
 
     <!-- jQuery -->
     <script src="../../resources/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="../../resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- DataTables -->
-    <script src="../../resources/plugins/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../../resources/plugins/datatables/js/dataTables.bootstrap4.js"></script>
     <!-- moment -->
     <script src="../../resources/plugins/moment/moment.min.js"></script>
     <!-- date-range-picker -->
@@ -350,9 +362,6 @@
 
     <script>
         $(document).ready(function(){
-            $('#datatable').DataTable({
-                "searching": false,
-            });
         });
     </script>
 </body>
