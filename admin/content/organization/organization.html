@@ -137,7 +137,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../account/account.html" class="nav-link active">
+                            <a href="../account/account.html" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     계정관리
@@ -146,7 +146,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../organization/organization.html" class="nav-link">
+                            <a href="../organization/organization.html" class="nav-link active">
                                 <i class="nav-icon fas fa-building"></i>
                                 <p>
                                     기관관리
@@ -165,7 +165,7 @@
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
-                    <h1 class="m-0 text-dark">계정관리</h1>
+                    <h1 class="m-0 text-dark">기관관리</h1>
                 </div>
             </div>
             <!-- /.content-header -->
@@ -175,32 +175,39 @@
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row row-point5rem justify-content-end mb-3">
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-secondary">회원승인</button>
-                                </div>
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-secondary">삭제</button>
-                                </div>
-                            </div>
                             <table class="table table-bordered table-fixed">
                                 <colgroup>
                                     <col style="width:5%">
-                                    <col style="width:15%">
-                                    <col style="width:15%">
+                                    <col>
+                                    <col>
+                                    <col style="width:8%">
+                                    <col style="width:8%">
+                                    <col style="width:8%">
+                                    <col style="width:8%">
+                                    <col style="width:8%">
+                                    <col style="width:8%">
+                                    <col style="width:12%">
+                                    <col>
+                                    <col>
                                 </colgroup>
                                 <thead>
                                     <tr>
                                         <th class="text-center" rowspan="2">
                                             <input type="checkbox" class="align-middle">
                                         </th>
-                                        <th class="text-center">권한</th>
-                                        <th class="text-center">기관</th>
-                                        <th class="text-center">이름</th>
-                                        <th class="text-center">소속</th>
-                                        <th class="text-center">직급</th>
-                                        <th class="text-center">아이디</th>
-                                        <th class="text-center">가입일</th>
+                                        <th class="text-center" rowspan="2">재고일자</th>
+                                        <th class="text-center" rowspan="2">등록자</th>
+                                        <th class="text-center" colspan="6">재고수량</th>
+                                        <th class="text-center" colspan="2" rowspan="2">특이사항</th>
+                                        <th class="text-center" rowspan="2">저장</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">합계</th>
+                                        <th class="text-center">화이자</th>
+                                        <th class="text-center">모더나</th>
+                                        <th class="text-center">아스트라제네카</th>
+                                        <th class="text-center">얀센</th>
+                                        <th class="text-center">기타</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -208,31 +215,99 @@
                                         <td class="text-center">
                                             <input type="checkbox" class="align-middle">
                                         </td>
+                                        <td class="text-center">2021-01-01</td>
+                                        <td class="text-center">성모병원</td>
                                         <td class="text-center">
-                                            <select name="" id="" class="custom-select custom-select-sm">
-                                                <option value="">모니터링</option>
-                                            </select>
+                                            <input type="text" class="form-control form-control-sm">
                                         </td>
                                         <td class="text-center">
-                                            <select name="" id="" class="custom-select custom-select-sm">
-                                                <option value="">보건소</option>
-                                            </select>
+                                            <input type="text" class="form-control form-control-sm">
                                         </td>
                                         <td class="text-center">
-                                            <input type="text" class="form-control form-control-sm form-control-plaintext text-center" readonly value="이순신">
+                                            <input type="text" class="form-control form-control-sm">
                                         </td>
                                         <td class="text-center">
-                                            <input type="text" class="form-control form-control-sm form-control-plaintext text-center" readonly value="보건소">
+                                            <input type="text" class="form-control form-control-sm">
                                         </td>
                                         <td class="text-center">
-                                            <input type="text" class="form-control form-control-sm form-control-plaintext text-center" readonly value="주무관">
+                                            <input type="text" class="form-control form-control-sm">
                                         </td>
                                         <td class="text-center">
-                                            <input type="text" class="form-control form-control-sm form-control-plaintext text-center" readonly value="Leesoonsin">
+                                            <input type="text" class="form-control form-control-sm">
+                                        </td>
+                                        <td class="text-center"><a href="#modal-unusual" class="text-underline text-truncate d-inline-block align-middle"  data-toggle="modal" style="max-width:100%">망실 3개</a></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal-unusual">입력</button>
                                         </td>
                                         <td class="text-center">
-                                            <input type="text" class="form-control form-control-sm form-control-plaintext text-center" readonly value="2021-01-01">
+                                            <button type="button" class="btn btn-sm btn-primary">저장</button>
                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row row-point5rem justify-content-end mb-3">
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary">추가</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary">삭제</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary">수정</button>
+                                </div>
+                            </div>
+                            <table class="table table-bordered">
+                                <colgroup>
+                                    <col style="width: 30%">
+                                    <col style="width: 10%">
+                                    <col style="width: 10%">
+                                    <col style="width: 10%">
+                                    <col style="width: 10%">
+                                    <col style="width: 10%">
+                                    <col style="width: 10%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">합계</th>
+                                        <th class="text-center">화이자</th>
+                                        <th class="text-center">모더나</th>
+                                        <th class="text-center">아스트라제네카</th>
+                                        <th class="text-center">얀센</th>
+                                        <th class="text-center">기타</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">재고량</td>
+                                        <td class="text-center">5,000회분</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">서초접종센터(보건소 포함)</td>
+                                        <td class="text-center">5,000회</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">의료기관(위탁, 자체)</td>
+                                        <td class="text-center">5,000회</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -246,6 +321,26 @@
 
     </div>
     <!-- ./wrapper -->
+
+    <!-- modal : 특이사항 -->
+    <div class="modal" tabindex="-1" id="modal-unusual">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">특이사항</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <textarea name="" id="" cols="" rows="5" class="form-control">망실 3개</textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- REQUIRED SCRIPTS -->
 
