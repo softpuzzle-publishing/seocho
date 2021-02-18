@@ -175,8 +175,14 @@
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-body">
-                            <div class="mb-2">
-                                <strong>기준날짜 2020.02.22, 00:00</strong>
+                            <div class="d-flex align-items-center mb-2">
+                                <strong class="mr-3">기준날짜</strong>
+                                <div class="input-group" style="width:155px">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control float-right" data-event="singleDatepicker">
+                                </div>
                             </div>
                             <table class="table table-bordered table-fixed" id="datatable">
                                 <colgroup>
