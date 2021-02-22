@@ -608,6 +608,35 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <h3>※ 주요 조치결과</h3>
+                            <div class="input-zone">
+                                <textarea name="" id="userText" cols="" rows="6" class="form-control"></textarea>
+                            </div>
+                            <div class="print-zone">
+
+                            </div>
+                            <table class="table table-bordered text-center mt-3">
+                                <colgroup>
+                                    <col style="width:120px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th class="bg-light">작성자</th>
+                                        <td class="text-left">
+                                            <div>
+                                                <span class="mr-3 ml-2">건강정책과장: ㅇㅇㅇ ☎1111</span>
+                                                <span class="mr-3">건강정책팀장: ㅇㅇㅇ ☎1111</span>
+                                                <span>담당: ㅇㅇㅇ ☎1111</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="text-right no-print mt-3">
+                                <button type="button" class="btn btn-primary" onclick="window.print()"><i class="fas fa-print mr-1"></i>인쇄하기</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -633,6 +662,16 @@
     <script src="../../resources/js/adminlte.min.js"></script>
     <!-- ui -->
     <script src="../../resources/js/ui.js"></script>
+
+    <script>
+        const textInput = document.querySelector('#userText');
+        const printZone = document.querySelector('.print-zone');
+        function watchText(){
+            const text = textInput.value
+            printZone.innerHTML = text;
+        }
+        textInput.addEventListener('keyup',watchText);
+    </script>
 </body>
 
 </html>

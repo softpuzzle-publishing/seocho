@@ -39,11 +39,16 @@ input[type=password]{font-family: 'NanumGothic';}
         font-size: 18px;margin-top: 1rem;margin-bottom: .5rem;
         &::before{content: "\f45c";font-family: "Font Awesome 5 Pro";font-weight: 900;margin-right: 6px;font-size: 16px;}
     }
+    h3{font-size: 18px;}
     .table{
         th,
         td{padding: .4rem .5rem;vertical-align: middle;}
         thead th{background-color: #f3f3f3;}
         strong{font-size: 18px;}
+    }
+    .print-zone{opacity: 0;position: absolute;z-index: -99999;white-space: pre-wrap;line-height: 1.6;}
+    .input-zone{
+        textarea.form-control{border-radius: 0;font-size: 13px;resize:none;}
     }
 }
 @media print{
@@ -52,6 +57,13 @@ input[type=password]{font-family: 'NanumGothic';}
     .content{padding: 0;}
     @page{
         size: A4;
+    }
+    .report-daily{
+        .print-zone{position: static;opacity: 1;}
+        .input-zone{
+            display: none;
+            textarea.form-control{padding: 0;border: 0;}
+        }
     }
 }
 
@@ -70,4 +82,21 @@ input[type=password]{font-family: 'NanumGothic';}
     }
     li + li{margin-left: -2px;}
 }
-
+.content-wrapper{
+    padding-bottom:80px;
+}
+.fixed-btn{
+    width:300px;height: 80px;position: fixed;bottom:15px;right:26px;text-align: center;line-height:80px;
+}
+.modal-symptom{
+    display: flex;flex-flow: wrap;padding: 20px;
+    .custom-control{
+        margin: 5px 15px;
+    }
+}
+.subject{font-size:18px; font-weight: bold;}
+.card{
+    &.up-border{
+        box-shadow: 0 0 6px #ddd, 0 1px 6px #ddd !important;
+    }
+}
