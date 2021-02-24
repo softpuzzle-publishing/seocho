@@ -391,9 +391,20 @@
                     <strong class="d-block mt-3 mb-2">상담 및 조치내용</strong>
                     <textarea name="" id="" cols="" rows="3" class="form-control" placeholder="전화상담 및 이송 등 조치결과 입력"></textarea>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">처리중 저장</button>
-                    <button type="button" class="btn btn-primary">처리완료 저장</button>
+                <div class="modal-footer justify-content-between">
+                    <div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input class="custom-control-input" type="radio" id="process1" name="process">
+                            <label for="process1" class="custom-control-label">처리중</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input class="custom-control-input" type="radio" id="process2" name="process">
+                            <label for="process2" class="custom-control-label">처리완료</label>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary">저장</button>
+                    </div>
                 </div>
             </div>
         </div>
