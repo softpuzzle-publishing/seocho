@@ -538,7 +538,7 @@ mark, .mark { padding: 0.2em; background-color: #fcf8e3; }
 
 .table-striped tbody tr:nth-of-type(odd) { background-color: rgba(0, 0, 0, 0.05); }
 
-.table-hover tbody tr:hover { color: #333; background-color: rgba(0, 0, 0, 0.075); }
+.table-hover tbody tr:hover { color: #333; background-color: rgba(239, 72, 47, 0.05); }
 
 .table-primary, .table-primary > th, .table-primary > td { background-color: #bbd9f9; }
 
@@ -604,11 +604,11 @@ mark, .mark { padding: 0.2em; background-color: #fcf8e3; }
 
 .table-hover .table-dark:hover > td, .table-hover .table-dark:hover > th { background-color: #b9bbbe; }
 
-.table-active, .table-active > th, .table-active > td { background-color: rgba(0, 0, 0, 0.075); }
+.table-active, .table-active > th, .table-active > td { background-color: rgba(239, 72, 47, 0.05); }
 
-.table-hover .table-active:hover { background-color: rgba(0, 0, 0, 0.075); }
+.table-hover .table-active:hover { background-color: rgba(237, 51, 23, 0.05); }
 
-.table-hover .table-active:hover > td, .table-hover .table-active:hover > th { background-color: rgba(0, 0, 0, 0.075); }
+.table-hover .table-active:hover > td, .table-hover .table-active:hover > th { background-color: rgba(237, 51, 23, 0.05); }
 
 .table .thead-dark th { color: #ffffff; background-color: #212529; border-color: #383f45; }
 

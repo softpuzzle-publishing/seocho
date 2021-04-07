@@ -102,6 +102,10 @@ input[type=password]{font-family: 'NanumGothic';}
 }
 
 tr.focus{
-    background: rgb(255, 248, 248);
-    > td{font-weight: 700;color: #000;}
+    background: rgba(239, 72, 47, 0.05);
+    > td{
+        font-weight: 700;color: #000;
+        select,
+        input{font-weight: 700;color: #000;}
+    }
 }
