@@ -23,7 +23,12 @@
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
 
-
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item ml-n3">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
@@ -213,7 +218,7 @@
                                 <div class="col-auto">
                                     <button type="button" class="btn btn-secondary">엑셀업로드</button>
                                 </div>
-                               
+
                             </div>
                             <div id="tableBox">
                                 <div data-reactroot="">
@@ -469,6 +474,9 @@
 
     <script>
         $(document).ready(function(){
+            $('#datatable').DataTable({
+                "searching": false,
+            });
         });
     </script>
 </body>
