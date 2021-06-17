@@ -1,5 +1,6 @@
-body{
-    min-width:980px;
+body{min-width:1024px;}
+@include media-breakpoint-down(sm) {
+    body{min-width: 1600px;}
 }
 
 /* icons */

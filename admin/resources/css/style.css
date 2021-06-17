@@ -129,7 +129,9 @@ html.html-error, html.html-error body { height: 100% !important; background: #ff
 
 #oopss #error-text .back { background: #fff; color: #000; font-size: 18px; text-decoration: none; margin: 3em auto 0; padding: .7em 2em; border-radius: 500px; box-shadow: inset 0px 0 0 3px #000; }
 
-body { min-width: 980px; }
+body { min-width: 1024px; }
+
+@media (max-width: 1199.98px) { body { min-width: 1600px; } }
 
 /* icons */
 [class*=icon-] { display: inline-block; background-size: contain; background-repeat: no-repeat; background-position: 50% 50%; font-size: 0; line-height: 1; }
